@@ -18,3 +18,7 @@ function setHiddenFields() {
         answer.value = "0" + answer.value;
     }
 }
+
+function setMessage(message) {
+    document.getElementById('message').innerHTML = message;
+}
