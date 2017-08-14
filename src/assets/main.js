@@ -13,7 +13,6 @@ function guess() {
     } else {
         attempt.value++;
         console.log(attempt.value);
-        getResult(input);
     }
 }
 
@@ -40,7 +39,7 @@ function validateInput(input) {
     }
 }
 
-function getResult(input) {
+function getResults(input) {
     let result = "<div class = 'row'><span class='col-md-6'>" + input.value + "</span><div class='col-md-6'>";
     for (let i=0; i<4;++i) {
         if (input.value.charAt(i) == answer.value.charAt(i)) {
