@@ -13,6 +13,7 @@ function guess() {
     } else {
         attempt.value++;
         console.log(attempt.value);
+        getResults(input);
     }
 }
 
@@ -41,16 +42,17 @@ function validateInput(input) {
 
 function getResults(input) {
     let result = "<div class = 'row'><span class='col-md-6'>" + input.value + "</span><div class='col-md-6'>";
-    for (let i=0; i<4;++i) {
-        if (input.value.charAt(i) == answer.value.charAt(i)) {
+    for (let i=0; i<input.value.toString().length;++i) {
+        if (input.value.toString().charAt(i) == answer.value.charAt(i)) {
             result += "<span class='glyphicon glyphicon-ok'></span>";
         }
-        else if (answer.value.includes(input.value.charAt(i))) {
+        else if (answer.value.includes(input.value.toString().charAt(i))) {
             result += "<span class='glyphicon glyphicon-transfer'></span>";
         } else {
             result += '<span class="glyphicon glyphicon-remove"></span>';
         }
     }
+    result += "</div></div>";
 
     document.getElementById('results').innerHTML = result;
 }
