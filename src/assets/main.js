@@ -73,6 +73,6 @@ function showAnswer(won) {
 }
 
 function showReplay() {
-    document.getElementById('guessing-div').style.display = none;
-    document.getElementById('replay-div').style.display = block;
+    document.getElementById('guessing-div').style.display = 'none';
+    document.getElementById('replay-div').style.display = 'block';
 }
