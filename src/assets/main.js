@@ -13,6 +13,7 @@ function guess() {
     } else {
         attempt.value++;
         console.log(attempt.value);
+        getResult(input);
     }
 }
 
@@ -37,4 +38,20 @@ function validateInput(input) {
         setMessage("Guesses must be exactly 4 characters long.");
         return false;
     }
+}
+
+function getResult(input) {
+    let result = "<div class = 'row'><span class='col-md-6'>" + input.value + "</span><div class='col-md-6'>";
+    for (let i=0; i<4;++i) {
+        if (input.value.charAt(i) == answer.value.charAt(i)) {
+            result += "<span class='glyphicon glyphicon-ok'></span>";
+        }
+        else if (answer.value.includes(input.value.charAt(i))) {
+            result += "<span class='glyphicon glyphicon-transfer'></span>";
+        } else {
+            result += '<span class="glyphicon glyphicon-remove"></span>';
+        }
+    }
+
+    document.getElementById('results').innerHTML = result;
 }
