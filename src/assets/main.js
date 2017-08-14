@@ -41,10 +41,12 @@ function validateInput(input) {
 }
 
 function getResults(input) {
+    let correct = 0;
     let result = "<div class = 'row'><span class='col-md-6'>" + input.value + "</span><div class='col-md-6'>";
     for (let i=0; i<input.toString().length;++i) {
         if (input.toString().charAt(i) == answer.value.charAt(i)) {
             result += "<span class='glyphicon glyphicon-ok'></span>";
+            correct++;
         }
         else if (answer.value.includes(input.toString().charAt(i))) {
             result += "<span class='glyphicon glyphicon-transfer'></span>";
@@ -53,6 +55,7 @@ function getResults(input) {
         }
     }
     result += "</div></div>";
-
     document.getElementById('results').innerHTML = result;
+
+    return correct == 4;
 }
