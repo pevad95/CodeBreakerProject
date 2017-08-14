@@ -71,3 +71,8 @@ function showAnswer(won) {
     document.getElementById('code').innerHTML = answer.value;
     document.getElementById('code').setAttribute('class', 'code ' + (won ? 'success' : 'failure'));
 }
+
+function showReplay() {
+    document.getElementById('guessing-div').style.display = none;
+    document.getElementById('replay-div').style.display = block;
+}
