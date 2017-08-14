@@ -7,6 +7,12 @@ function guess() {
     if (answer.value == '' && attempt.value == '') {
         setHiddenFields();
     }
+
+    if (!validateInput(input.value)) {
+        return false;
+    } else {
+        attempt.value = parseInt(attempt.value)++;
+    }
 }
 
 //implement new functions here
